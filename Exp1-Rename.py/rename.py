@@ -1,12 +1,14 @@
 import os
-## defination start--------------------------------
+## defination -- start-----------------------------
 dsln="-------------------------"
 key1=""
 blank=""
 line1=""
 loc=""
 tmp=[]
-## defination end----------------------------------
+## defination -- end-------------------------------
+##
+## locate directory -- start-----------------------
 print "Welcome!"
 print dsln
 print "First, tell me the folder which you want to clean up, current?"
@@ -24,4 +26,8 @@ if key1 == blank:
 		print "Input Format Error:Please re-open program."
 else:
 	loc=key1
-
+## locate directory -- end-------------------------
+##
+## list file -- start-----------------------------------
+os.system("ls "+loc+
+## list file -- end------------------------------------
