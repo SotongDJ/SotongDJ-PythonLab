@@ -2,15 +2,23 @@ import os
 ## defination -- start-----------------------------
 dsln="-------------------------"
 key1=""
-line1=""
 loc=""
+filelist=[]
+global tmps,tmpl,blank,line
+tmps=""
+tmpl=[]
+blank=""
+line=""
 def clean():
+	tmps=""
 	tmpl=[]
 	blank=""
-clean()
+	line=""
 ## defination -- end-------------------------------
 ##
+clean()
 ## locate directory -- start-----------------------
+os.system("clear")
 print "Welcome!"
 print dsln
 print "First, tell me the folder which you want to clean up, current?"
@@ -28,9 +36,20 @@ if key1 == blank:
 		print "Input Format Error:Please re-open program."
 else:
 	loc=key1
+print "Directory: "+loc
 ## locate directory -- end-------------------------
 ##
+clean()
 ## list file -- start-----------------------------------
-os.system("ls "+loc+">/tmp/pytmp")
-
+os.system("ls "+loc)
+os.system("ls -1 "+loc+">/tmp/pytmp")
+filelist=open("/tmp/pytmp").read().splitlines()
 ## list file -- end------------------------------------
+##
+clean()
+## IRD -- start---------------------------------------
+## des:input replacement dictionary
+print dsln
+print "Now, You can"
+print dsln
+## IRD -- end----------------------------------------
