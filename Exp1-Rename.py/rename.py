@@ -24,5 +24,4 @@ if key1 == blank:
 		print "Input Format Error:Please re-open program."
 else:
 	loc=key1
-#os.system("echo "+loc) --debugUsage
 
