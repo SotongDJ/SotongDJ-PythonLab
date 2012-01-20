@@ -2,10 +2,12 @@ import os
 ## defination -- start-----------------------------
 dsln="-------------------------"
 key1=""
-blank=""
 line1=""
 loc=""
-tmp=[]
+def clean():
+	tmpl=[]
+	blank=""
+clean()
 ## defination -- end-------------------------------
 ##
 ## locate directory -- start-----------------------
@@ -18,9 +20,9 @@ print dsln
 key1=raw_input()
 if key1 == blank:
 	os.system("pwd>/tmp/pytmp")
-	tmp=open("/tmp/pytmp").read().splitlines()
-	if len(tmp) == 1:
-		for line1 in tmp:
+	tmpl=open("/tmp/pytmp").read().splitlines()
+	if len(tmpl) == 1:
+		for line1 in tmpl:
 			loc=line1
 	else:
 		print "Input Format Error:Please re-open program."
@@ -29,5 +31,6 @@ else:
 ## locate directory -- end-------------------------
 ##
 ## list file -- start-----------------------------------
-os.system("ls "+loc+
+os.system("ls "+loc+">/tmp/pytmp")
+
 ## list file -- end------------------------------------
