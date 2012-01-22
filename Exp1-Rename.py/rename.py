@@ -58,7 +58,7 @@ filelist1=open("/tmp/pytmp").read().splitlines()
 ##
 clean()
 ## Identity Previous RD -- start-----------------
-status=os.system("cp chlist /tmp/pytmp")
+status=os.system("cp chlist /tmp/pytmp2")
 ## Identity Previous RD -- end------------------
 ##
 clean()
@@ -73,11 +73,11 @@ print "\"?\", \"=\", \"*\" and \"##\", to prevent error."
 print dsln
 title="## Example:\nchange_from=change_to ##"
 if status == 0:
-	file=open("/tmp/pytmp",'w')
+	os.system("mv /tmp/pytmp2 /tmp/pytmp")
 else:
-	file=open("/tmp/pytmp",'a')
-file.write(title)
-file.close()
+	file=open("/tmp/pytmp",'w')
+	file.write(title)
+	file.close()
 os.system("gedit /tmp/pytmp")
 raw_input("If you finish key-in, press ENTER.")
 chlist=open("/tmp/pytmp").read().splitlines()
