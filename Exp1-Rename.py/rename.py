@@ -73,12 +73,17 @@ file.close()
 os.system("gedit /tmp/pytmp")
 raw_input("If you finish key-in, press ENTER.")
 chlist=open("/tmp/pytmp").read().splitlines()
+os.system("cp /tmp/pytmp \""+loc+"/chlist\"")
 ## Key-in RD -- end--------------------------------
 ## 
 clean()
 ## generate chlist -- start -----------------------
-file=open(loc+"/rename.sh",'w')
-file.write("#/bin/sh\n")
+file1=open(loc+"/rename.sh",'w')
+file2=open(loc+"/before.list",'w')
+file3=open(loc+"/after.list",'w')
+file1.write("#/bin/sh\n")
+file2.write("Before rename:\n")
+file3.write("After rename:\n")
 for line1 in filelist1:
 	tmps="\""+loc+"/"+line1+"\""
 	for line2 in chlist:
@@ -86,6 +91,9 @@ for line1 in filelist1:
 			tmpl1=line2.split("=")
 			line1=line1.replace(tmpl1[0],tmpl1[1])
 	line1="\""+loc+"/"+line1+"\""
-	file.write("mv "+tmps+" "+line1+"\n")
-file.close()
-os.system("cat \""+loc+"/rename.sh\"")
+	file1.write("mv "+tmps+" "+line1+"\n")
+	file2.write(tmps+"\n")
+	file3.write(line1+"\n")
+file1.close()
+file2.close()
+file3.close()
