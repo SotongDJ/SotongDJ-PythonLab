@@ -71,6 +71,7 @@ file.close()
 os.system("gedit /tmp/pytmp")
 raw_input("If you finish key-in, press ENTER.")
 chlist=open("/tmp/pytmp").read().splitlines()
+os.system("cp /tmp/pytmp \""+loc+"/chlist\"")
 ## Key-in RD -- end--------------------------------
 ## 
 clean()
