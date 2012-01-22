@@ -57,6 +57,11 @@ filelist1=open("/tmp/pytmp").read().splitlines()
 ## list file -- end------------------------------------
 ##
 clean()
+## Identity Previous RD -- start-----------------
+status=os.system("cp chlist /tmp/pytmp")
+## Identity Previous RD -- end------------------
+##
+clean()
 ## Key-in RD -- start-------------------------------
 ## des:key-in replacement dictionary
 print dsln
@@ -67,7 +72,10 @@ print "Notice:Be carefull don't use special symbol like "
 print "\"?\", \"=\", \"*\" and \"##\", to prevent error."
 print dsln
 title="## Example:\nchange_from=change_to ##"
-file=open("/tmp/pytmp",'w')
+if status == 0:
+	file=open("/tmp/pytmp",'w')
+else:
+	file=open("/tmp/pytmp",'a')
 file.write(title)
 file.close()
 os.system("gedit /tmp/pytmp")
