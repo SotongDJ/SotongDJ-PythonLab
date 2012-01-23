@@ -7,18 +7,16 @@ loc=""
 filelist1=[]
 filelist2=[]
 chlist=[]
-global tmps,tmpl1,tmpl2,blank,line1,line2,argv
+global tmps,tmpl,blank,line1,line2,argv
 tmps=""
-tmpl1=[]
-tmpl2=[]
+tmpl=[]
 blank=""
 line1=""
 line2=""
 argv=""
 def clean():
 	tmps=""
-	tmpl1=[]
-	tmpl2=[]
+	tmpl=[]
 	blank=""
 	line1=""
 	line2=""
@@ -37,9 +35,9 @@ print dsln
 key1=raw_input()
 if key1 == blank:
 	os.system("pwd>/tmp/pytmp")
-	tmpl1=open("/tmp/pytmp").read().splitlines()
-	if len(tmpl1) == 1:
-		for line1 in tmpl1:
+	tmpl=open("/tmp/pytmp").read().splitlines()
+	if len(tmpl) == 1:
+		for line1 in tmpl:
 			loc=line1
 	else:
 		print "Input Format Error:Please re-open program."
@@ -96,8 +94,8 @@ for line1 in filelist1:
 	tmps="\""+loc+"/"+line1+"\""
 	for line2 in chlist:
 		if not "##" in line2:
-			tmpl1=line2.split("=")
-			line1=line1.replace(tmpl1[0],tmpl1[1])
+			tmpl=line2.split("=")
+			line1=line1.replace(tmpl[0],tmpl[1])
 	line1="\""+loc+"/"+line1+"\""
 	file1.write("mv "+tmps+" "+line1+"\n")
 	file2.write(tmps+"\n")
