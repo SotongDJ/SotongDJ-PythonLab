@@ -1,0 +1,27 @@
+-------------------------
+The digit of numbers: 6
+-------------------------
+The sum of numbers: 21
+-------------------------
+The number that you selected: 940221
+-------------------------
+The 1th combination is:
+940224
+The 2th combination is:
+940233
+The 3th combination is:
+940242
+The 4th combination is:
+940251
+The 5th combination is:
+940260
+The 6th combination is:
+940305
+The 7th combination is:
+940314
+The 8th combination is:
+940323
+The 9th combination is:
+940332
+The 10th combination is:
+940341
