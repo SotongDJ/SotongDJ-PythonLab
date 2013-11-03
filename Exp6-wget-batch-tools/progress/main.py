@@ -1,11 +1,12 @@
 import os
 def status():
+    print "----RESULT-----------"
     os.system("ls -1>progress/file.tmp")
     for wgetlog in open("progress/file.tmp").read().splitlines():
         if "wget-log" in wgetlog:
             percentage="0%"
             for line in open(wgetlog).read().splitlines():
-                if "K ." in line or "K =" in line:
+                if "K ." in line or "100%" in line or "K =" in line:
                     if "100%" not in line:
                         #print "mark0:"+percentage
                         tpo=int(percentage.replace("%",""))
@@ -23,6 +24,7 @@ def status():
                     elif "100%" in line:
                         percentage="Finished"
             print wgetlog+":"+percentage
+    print "---------------------"
 command="i"
 
 while command!="n":
